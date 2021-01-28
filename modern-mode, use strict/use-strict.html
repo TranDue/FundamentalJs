@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use Strict</title>
+</head>
+<body>
+    
+    <script>
+        "use strict";
+            var a = "use strict"
+        // var obj = {};
+        //     Object.defineProperty(obj, {value: 1, writable: false});
+        //     obj.ver = 10;
+                alert(a)
+        /* Các nghiêm ngặt của strict mode:
+            1.  Gán giá trị cho biến chưa được khai báo
+                - "use strict"
+                    variable = "tranvanmy";
+                    console.log(variable);
+                    //Uncaught ReferenceError: variable is not defined
+                +> khắc phục : Khai báo biến vs từ khóa var or let
+                    "use strict"
+                    var variable = "tranvanmy";
+                    // or
+                    let variable = "tranvanmy";
+                    console.log(variable);
+            
+            2.  Báo lỗi khi sử dụng delete
+                function getName (name)
+                {
+                    console.log(name)
+                }
+                delete getName;
+                ---> ko dùng đc hàm delete  để xóa và cũng không thông báo.. nếu dùng "use strict" thì không xóa đc nó sẽ báo lỗi : "Uncaught SyntaxError: Delete of an unqualified  identifier in strict mode."
+            
+            3. Các tham số của hàm không được trùng nhau
+                function getProfile (name,  name,  age)
+                {
+                    //code
+                }
+                    //Uncaught SyntaxError: Duplicate parameter name not allowed in this context
+
+            4. Không cho phép khai báo biến dưới dạng hệ nhị phân
+                var num = 01010;
+                    //Uncaught SyntaxError: Octal literals are not allowed in strict mode
+
+            5. Không được phép ghi đè lên thuộc tính chỉ được phép đọc.
+                - Bình thường khi không có 'use strict'
+                    var obj = {};
+                    Object.defineProperty(obj, 'ver', {value: 1, writable: false});
+                    obj.ver = 10;
+                    //không có gì xảy ra
+                +> Khi dùng 'strict mode'
+                    "use strict"
+                    var obj = {};
+                    Object.defineProperty(obj, 'ver', {value: 1, writable: false});
+                    obj.ver = 10;
+                    ---------
+                    Uncaught TypeError: Cannot assign to read only property 'ver' of object '#<Object>'
+                        at data.php:14
+
+            6. Không sử dụng được with
+                "use strict"
+                var bar = 1;            
+                var foo = 2;
+                with (bar){
+                    console.log(foo);                                   //2 ( chế độ thường )
+                }
+                //Uncaught SyntaxError: Strict mode code may not include a with statement'
+            
+            7. Không cho phép khai báo biến trong "eval" : (Phương thức eval() có chức năng tính toán biểu thức toán học hoặc 
+                                                            thức thi mã lệnh tùy thuộc vào tham số mà người dùng truyền vào khi khởi tạo phương thức. 
+                                                            Nếu tham số truyền vào là một biểu thức toán học, phương thức sẽ tính toàn và trả về kết quả của biểu thức đó)
+                "use strict"
+                eval ("var x = 4");
+                console.log(x);
+                //Uncaught ReferenceError: x is not defined
+
+            8. Không chấp nhận khai báo các keyword
+                Ở chế độ strict mode thì không sử dụng được các từ khóa sau để khai báo làm tên biến, hằng,...
+                    implements
+                    interface
+                    let
+                    package
+                    private
+                    protected
+                    public
+                    static
+                    yield
+                    arguments
+
+                *Note: Để khai báo một biến ta sử dụng từ khóa const, let, var.
+                        ->  const được sử dụng để khai báo 1 hằng số, và giá trị của nó không thay đổi trong suốt chương trình.
+
+                            let khai báo biến chỉ có thể truy cập được trong block bao quanh nó được xác định bằng cặp {}.
+
+                            var khai báo biến có thể truy cập ở phạm vi hàm số hoặc bên ngoài hàm số, toàn cục.
+        */
+    </script>
+</body>
+</html>
