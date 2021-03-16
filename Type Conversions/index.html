@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversions</title>
+</head>
+
+<body>
+
+
+
+    <!-- Hầu hết các quy tắc này đều dễ hiểu và dễ ghi nhớ. Các trường hợp ngoại lệ đáng chú ý mà mọi người thường mắc lỗi
+    là:
+    undefinedlà NaNmột con số, không phải 0.
+    "0"và các chuỗi chỉ có dấu cách như " "là true dưới dạng boolean.
+    Các đối tượng không được đề cập ở đây. Chúng ta sẽ trở lại với chúng ở phần sau trong chương Chuyển đổi đối tượng
+    thành nguyên thủy dành riêng cho các đối tượng sau khi chúng ta tìm hiểu những điều cơ bản hơn về JavaScript.
+ -->
+
+    <script>
+        let value = true;
+        alert(typeof value); // boolean
+
+        value = String(value); // now value is a string "true"
+        alert(typeof value); // string
+    </script>
+</body>
+
+</html>
